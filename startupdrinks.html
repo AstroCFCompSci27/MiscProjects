@@ -1,0 +1,46 @@
+<!-- http://www.meetup.com/Startup-Drinks-Cedar-Valley -->
+
+<html>
+<body style="margin:auto;">
+
+<div id="banner_ad" style="width:901px;height:31px;">
+<a href="http://www.meetup.com/Startup-Drinks-Cedar-Valley/" target="_blank">
+<img id="rotating_image" src="frame_1.png" width="300px" height="90px" alt="sd_banner" title="sd_banner" />
+</a>
+</div>
+
+<script>
+
+  var pngArray = new Array();
+  
+  pngArray[ 0 ] = "frame_1.png";
+  pngArray[ 1 ] = "frame_2.png";
+  pngArray[ 2 ] = "frame_3.png";
+  pngArray[ 3 ] = "frame_4.png";
+  pngArray[ 4 ] = "frame_5.png";
+  pngArray[ 5 ] = "frame_6.png";
+  
+  function rotate_ad( rotationCount, index, pngArray )
+  {
+    if ( rotationCount < 350 )
+    {
+      var ad_state = document.getElementById( "rotating_image" );
+
+      if ( index == 6 )
+      {
+        index = 0;
+      }
+                  
+      rotating_image.src = pngArray[ index ];
+      index = index + 1;
+
+      setTimeout( function(){ rotate_ad( rotationCount + 1, index, pngArray ) }, 2000 );
+    }
+  }
+
+rotate_ad( 0, 0, pngArray );
+  
+</script>
+
+</body>
+</html>
